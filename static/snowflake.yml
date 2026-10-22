@@ -1,0 +1,44 @@
+# created-by: streamlit-in-workspaces; skill-version=1.0.0
+definition_version: 2
+entities:
+  ECOMM_APP:
+    type: streamlit
+    meta:
+      use_mixins:
+        - streamlit_shared
+    identifier:
+      name: ''
+      database: ECOMMERCE_DB
+      schema: ANALYTICS
+mixins:
+  streamlit_shared:
+    artifacts:
+      - pyproject.toml
+      - streamlit_app.py
+      - .streamlit/config.toml
+      - data.py
+      - agent.py
+      - ui.py
+      - app_pages/overview.py
+      - app_pages/sales.py
+      - app_pages/customers.py
+      - app_pages/delivery.py
+      - app_pages/satisfaction.py
+      - app_pages/anomalies.py
+      - app_pages/assistant.py
+      - static/Inter-Regular.ttf
+      - static/Inter-Medium.ttf
+      - static/Inter-SemiBold.ttf
+      - static/Inter-Bold.ttf
+      - static/JetBrainsMono-Regular.ttf
+      - static/JetBrainsMono-Medium.ttf
+    title: ECOMM_APP
+    query_warehouse: RAG_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    artifact_repositories:
+      - SNOWFLAKE.SNOWPARK.PYPI_SHARED_REPOSITORY
+    grants:
+      - privilege: USAGE
+        user: ANALYTICSWITHANAND
+        with_grant_option: true
+    main_file: streamlit_app.py
